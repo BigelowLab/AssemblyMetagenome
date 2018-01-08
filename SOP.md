@@ -20,7 +20,7 @@ Note- cannot write to storage foler bc bigelow has funky permissions, must write
 should check out the results here and make sure they make sense. 
 
 
-## Next Assemble via SPAdes
+## Next, Assemble via SPAdes
 Tool Reference: http://cab.spbu.ru/software/spades/
 
 
@@ -32,7 +32,7 @@ default memory for SPAdes is 250GB, need to manually flag alternative if need mo
 
 ```spades.py --memory 400 --meta --pe1-1 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_FP.fastq --pe1-2 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_RP.fastq -o /home/jgoordial/T0_spades_wall```
 
-IF it stops fr some reason ( like you forgot the memory thing above and need) you dont need to start again, can use the --continue flag as below to keep going 
+IF it stops for some reason ( like you forgot the memory thing above and need more) you dont need to start again, can use the --continue flag as below to keep going 
 
 ```pades.py --memory 400 --meta --pe1-1 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_FP.fastq --pe1-2 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_RP.fastq --continue -o /home/jgoordial/T0_spades_wall```
 
