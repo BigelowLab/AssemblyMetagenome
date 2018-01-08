@@ -1,4 +1,4 @@
-# Trim + Assembly with Spades: bigelow specific code :octocat:
+# Trim + Assembly with Spades: bigelow specific :octocat:
 ## Jackie Goo, Jauary 2018 
 
 Q control and Assembly of metagenomic reads for Atlantis Massif seq
