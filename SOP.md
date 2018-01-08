@@ -41,9 +41,9 @@ IF it stops for some reason ( like you forgot the memory thing above and need mo
 I'm using BBMAP 
 Tool Reference: https://sourceforge.net/projects/bbmap/
 
-```module use /mnt/scgc_nfs/opt/modulefiles/common/
-module load anaconda3
-module load bbmap```
+```module use /mnt/scgc_nfs/opt/modulefiles/common/```
+```module load anaconda3```
+```module load bbmap```
 
 this will generate an index and map in one command 
 
