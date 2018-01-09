@@ -38,6 +38,7 @@ IF it stops for some reason ( like you forgot the memory thing above and need mo
 
 ## Lets map those reads back to our assembly
 
+
 I'm using BBMAP 
 Tool Reference: https://sourceforge.net/projects/bbmap/
 
@@ -48,6 +49,8 @@ Tool Reference: https://sourceforge.net/projects/bbmap/
 this will generate an index and map in one command 
 
 ```bbmap.sh in1=/mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/T0_R1_001.fastq in2=/mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/T0_R2_001.fastq ref=/mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Spades_out_T0/contigs.fasta out=mapped.sam covstats=constats.txt basecov=basecov.txt bincov=bincov.txt```
+
+As a fun note - if the headers in your contigs have weird things like spaces or "+"s other programs like Anvi'o will not be a huge fan. Can save yourself re-doing this step again later by making sure your headers are cool, and then mapping. 
 
 ## Convert SAM files to BAM
 
