@@ -39,8 +39,10 @@ IF it stops for some reason ( like you forgot the memory thing above and need mo
 ## Lets map those reads back to our assembly
 
 
-I'm using BBMAP 
+I'm using BBMAP and SAMTOOLS
 Tool Reference: https://sourceforge.net/projects/bbmap/
+and: https://github.com/davetang/learning_bam_file
+
 
 ```module use /mnt/scgc_nfs/opt/modulefiles/common/```
 ```module load anaconda3```
