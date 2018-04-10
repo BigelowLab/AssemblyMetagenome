@@ -13,7 +13,7 @@ Tool Reference:  http://www.usadellab.org/cms/?page=trimmomatic
 ```module use /mnt/scgc_nfs/opt/modulefiles/common/ ```
 ```module load trimmomatic```
 
-Note- cannot write to storage foler bc bigelow has funky permissions, must write to home dir and copy later, hella annoying. 
+Note- cannot write to storage folder bc bigelow has funky permissions, must write to home dir and copy later, hella annoying. 
 
 ```trimmomatic.sh PE /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/T0_R1_001.fastq /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/T0_R2_001.fastq T0_FP.fastq T0_FUP.fastq T0_RP.fastq T0_RUP.fastq  LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36 ```
 
@@ -34,7 +34,7 @@ default memory for SPAdes is 250GB, need to manually flag alternative if need mo
 
 IF it stops for some reason ( like you forgot the memory thing above and need more) you dont need to start again, can use the --continue flag as below to keep going 
 
-```pades.py --memory 400 --meta --pe1-1 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_FP.fastq --pe1-2 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_RP.fastq --continue -o /home/jgoordial/T0_spades_wall```
+```spades.py --memory 400 --meta --pe1-1 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_FP.fastq --pe1-2 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_RP.fastq --continue -o /home/jgoordial/T0_spades_wall```
 
 ## Lets map those reads back to our assembly
 
@@ -52,7 +52,7 @@ this will generate an index and map in one command
 
 ```bbmap.sh in1=/mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/T0_R1_001.fastq in2=/mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/T0_R2_001.fastq ref=/mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Spades_out_T0/contigs.fasta out=mapped.sam covstats=constats.txt basecov=basecov.txt bincov=bincov.txt```
 
-As a fun note - if the headers in your contigs have weird things like spaces or "+"s other programs like Anvi'o will not be a huge fan. Can save yourself re-doing this step again later by making sure your headers are cool, and then mapping. 
+As a fun note - if the headers in your contigs have weird things like spaces or "+"s other programs like Anvi'o will not be a huge fan. Can save yourself re-doing this step again later by making sure your headers are cool, and then mapping. Anvio has a simple command that will fix your headers, if you need to do that, do it first, THEN map. 
 
 ## Convert SAM files to BAM
 
