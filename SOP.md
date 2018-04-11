@@ -46,12 +46,24 @@ IF it stops for some reason ( like you forgot the memory thing above and need mo
 
 ```spades.py --memory 400 --meta --pe1-1 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_FP.fastq --pe1-2 /mnt/storage/orcutt/Jackie_bioinformatics/AM_metageome/Goordial_DCO/Trimmomatic_out/T0_RP.fastq --continue -o /home/jgoordial/T0_spades_wall```
 
+
+
+##Optional- may want to "fix" file headers at this step if you are plannning on using anvio later, need to do this before mapping. Can fix names like so: 
+```module use /mnt/scgc_nfs/opt/modulefiles/common/```
+```module load anaconda3```
+```source activate anvio3```
+
+```anvi-script-reformat-fasta /home/jgoordial/Goordial_AtlantisMassif/All_sc_metagenomes/scaffolds.fasta -o /home/jgoordial/Goordial_AtlantisMassif/All_sc_metagenomes/fixscaffolds.fa -l 0 --simplify-names```
+
+
 ## Lets map those reads back to our assembly
 
 
 I'm using BBMAP and SAMTOOLS
 Tool Reference: https://sourceforge.net/projects/bbmap/
 and: https://github.com/davetang/learning_bam_file
+
+*bowtie output folders have to exist. 
 
 
 ```module use /mnt/scgc_nfs/opt/modulefiles/common/```
