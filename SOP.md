@@ -1,11 +1,21 @@
 # Trim + Assembly with Spades: bigelow specific :octocat:
 ## Jackie Goo, Jauary 2018 
 
-Q control and Assembly of metagenomic reads for Atlantis Massif seq
+Q control and Assembly of metagenomic reads for Atlantis Massif seq. These are examples only. 
 
-Commands included here, example PBS also available in directory separately. 
+Commands/read me included here, example PBS also available in directory separately. 
 
-## First lets trim our seqs for quality 
+Optional, but helpful for MDA'd samples is normalizing reads. Can do this using bbmap. 
+Tool Reference: https://sourceforge.net/projects/bbmap/
+
+##Normalizing kmers 
+
+```module use /mnt/scgc_nfs/opt/modulefiles/common/ ```
+```module load anaconda```
+```module load bbmap```
+```bbnorm.sh in1=69A4R1_S10_R1_001.fastq in2=69A4R1_S10_R2_001.fastq out=norm69A4R1#.fastq target=30 min=3 kmer=21```
+
+## lets trim our seqs for quality 
 note includes bigelow server specific commands! 
 
 Tool Reference:  http://www.usadellab.org/cms/?page=trimmomatic
